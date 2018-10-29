@@ -6,7 +6,7 @@
 
 ## 文章中提到的一些基础操作
 
-### 如何打开终端
+### 如何在Ubuntu中打开终端
 
 1. 在搜索框中输入Terminal来搜索终端
 
@@ -141,10 +141,10 @@ fab@ubuntu:~$ ~/fabcoin/fabcoin-qt
 
 ![encrypt your wallet](https://github.com/azraeljack/document/blob/master/encrypt_your_wallet.png)
 
-5. 输入以下命令以启动GPU挖矿
+5. 关闭钱包程序并输入以下命令以启动GPU挖矿
 
 ```zsh
-fab@ubuntu:~$ ~/fabcoin/fabcoind -daemon -gen -G -allgpu
+fab@ubuntu:~$ ~/fabcoin/fabcoind -daemon -G -allgpu -CUDA -gen -genproclimit=100 -blockmaxconflict=12
 ```
 
 ### 检查挖矿状态
@@ -181,5 +181,5 @@ fab@ubuntu:~$ ./fabcoin-cli getwalletinfo
 1. 在命令行中输入以下命令来结束挖矿
 
 ```zsh
-fab@ubuntu:~$ killall fabcoind
+fab@ubuntu:~$ sudo killall fabcoind
 ```
