@@ -10,13 +10,11 @@
 
 1. 在搜索框中输入Terminal来搜索终端
 
-![search terminal]()
+![search terminal](https://github.com/azraeljack/document/blob/master/how_to_open_terminal.png)
 
 2. 运行终端，结果如下图
 
-![run terminal]()
-
-![terminal]()
+![terminal](https://github.com/azraeljack/document/blob/master/terminal.png)
 
 ## Ubuntu
 
@@ -128,10 +126,10 @@ fab@ubuntu:~$ lshw -c video
 
 1. 登陆[fabcoin.pro](http://fabcoin.pro/runtime.html)来下载最新的挖矿程序。请根据你的显卡是否支持CUDA来确定应该下载哪个版本。如果支持CUDA的话可以下载支持CUDA版本的挖矿程序，如果不支持的话可以下载OpenCL版本的挖矿程序。
 
-![download instruction](https://mmbiz.qpic.cn/mmbiz_png/fz0bOjnnvcahaUSZJKCqjzmvDY4oznq9ACDJF0uHacFVAKa69emicW4qAlzuhDFPXFgQic3qWjpPxOChTI1YxNdQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![download instruction](https://github.com/azraeljack/document/blob/master/download_instruction.png)
 
 2. 解压缩到挖矿程序到`$HOME/fabcoin`
-![decompress]()
+![decompress](https://github.com/azraeljack/document/blob/master/decompress.png)
 
 3. 输入以下命令启动发币全节点钱包
 
@@ -140,7 +138,8 @@ fab@ubuntu:~$ ~/fabcoin/fabcoin-qt
 ```
 
 4. 备份钱包并且加密：自动同步->最大化钱包界面->鼠标移动到左上角标题栏出现->设置->加密钱包（打开钱包的密码）->文件->备份钱包（请备份至U盘并妥善保管）
-![encrypt your wallet]()
+
+![encrypt your wallet](https://github.com/azraeljack/document/blob/master/encrypt_your_wallet.png)
 
 5. 输入以下命令以启动GPU挖矿
 
