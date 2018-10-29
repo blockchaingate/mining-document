@@ -141,7 +141,7 @@ fab@ubuntu:~$ ~/fabcoin/fabcoin-qt
 
 ![encrypt your wallet](https://github.com/azraeljack/document/blob/master/encrypt_your_wallet.png)
 
-5. 关闭钱包程序并输入以下命令以启动GPU挖矿
+5. 关闭钱包程序，并输入以下命令以启动GPU挖矿
 
 ```zsh
 fab@ubuntu:~$ ~/fabcoin/fabcoind -daemon -G -allgpu -CUDA -gen -genproclimit=100 -blockmaxconflict=12
