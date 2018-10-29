@@ -22,7 +22,7 @@
 
 ### 配置挖矿环境（可以跳过这一步如果你已经有一台之前配置好的矿机）
 
-1. 首先请先安装`Ubuntu 16.04`作为矿机的操作系统，具体教程请参见这里[这里](http://forum.ubuntu.org.cn/viewtopic.php?t=478527)。
+1. 首先请先安装`Ubuntu 16.04`作为矿机的操作系统，具体教程请参见这里[这里](http://forum.ubuntu.org.cn/viewtopic.php?t=478527)。
 
 2. 然后我们需要安装Nvidia的显卡驱动，显卡驱动安装完成后请重启你的电脑，
 
@@ -151,7 +151,7 @@ fab@ubuntu:~$ ./fabcoind -daemon -gen -G -allgpu
 
 ### 检查挖矿状态
 
-1. 在命令行中输入以下命令查看GPU使用状况来确定挖矿是否在进行，如果挖矿正常进行，GPU占用率应该在100%，并且在`processes`里应该可以看到`fabcoind`
+1. 在命令行中输入以下命令查看GPU使用情况来确定挖矿是否在进行，如果挖矿正常进行，GPU占用率应该在100%，并且在`processes`里应该可以看到`fabcoind`
 
 ```zsh
 fab@ubuntu:~$ nvidia-smi
