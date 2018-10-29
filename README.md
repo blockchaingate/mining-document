@@ -123,7 +123,7 @@ fab@ubuntu:~$ lshw -c video
        resources: irq:53 memory:ee000000-eeffffff memory:d0000000-dfffffff memory:e0000000-e1ffffff ioport:b000(size=128) memory:c0000-dffff
 ```
 
-3. 检测您的显卡是否支持`CUDA`。在[这里](https://developer.nvidia.com/cuda-gpus)搜索你的显卡型号来确定是否你的显卡是否支持`CUDA`。进入网页后选择`CUDA-Enabled Geforce Products`，点击后会有一个列表来显示现在所有支持CUDA的Nvidia Geforce显卡，如果你的显卡在列表里，那么证明你的显卡支持CUDA。如果你使用的是Quadro或者是Tesla系列的显卡那么请点击对应的选项。如果你不知道你自己的显卡型号，可以去上一条的结果里的`product`项中获得，例如我的显卡就是`Quadro K2000`。
+3. 检测您的显卡是否支持`CUDA`。在[这里](https://developer.nvidia.com/cuda-gpus)搜索你的显卡型号来确定你的显卡是否支持`CUDA`。进入网页后选择`CUDA-Enabled Geforce Products`，点击后会有一个列表来显示现在所有支持CUDA的Nvidia Geforce显卡，如果你的显卡在列表里，那么证明你的显卡支持CUDA。如果你使用的是Quadro或者是Tesla系列的显卡那么请点击对应的选项。如果你不知道你自己的显卡型号，可以去上一条的结果里的`product`项中获得，例如我的显卡就是`Quadro K2000`。
 
 ### 下载和配置挖矿程序
 
