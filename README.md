@@ -30,10 +30,10 @@
 fab@ubuntu:~$ sudo apt purge nvidia*
 fab@ubuntu:~$ sudo add-apt-repository ppa:graphics-drivers/ppa
 fab@ubuntu:~$ sudo apt update
-fab@ubuntu:~$ sudo apt install nvidia-410
+fab@ubuntu:~$ sudo apt install -y nvidia-410
 ```
 
-3. 重启完成后在终端中输入以下命令确认驱动安装成功，如果可以看到类似于下面的结果那么证明驱动已经安装成功了。
+3. 重启完成后在终端中输入以下命令确认驱动安装成功，如果可以看到类似于下面的结果那么证明驱动已经安装成功了。
 
 ```zsh
 fab@ubuntu:~$ nvidia-smi
@@ -88,7 +88,6 @@ fab@ubuntu:~$ sudo apt install -y libdb4.8-dev libdb4.8++-dev
 fab@ubuntu:~$ sudo apt install -y libevent-dev
 fab@ubuntu:~$ sudo apt install -y libsodium-dev
 fab@ubuntu:~$ sudo apt install -y clinfo
-fab@ubuntu:~$ groups
 fab@ubuntu:~$ sudo usermod -a -G video $LOGNAME
 ```
 
@@ -99,9 +98,9 @@ fab@ubuntu:~$ sudo usermod -a -G video $LOGNAME
 ```zsh
 fab@ubuntu:~$ lsb_release -a
 No LSB modules are available.
-Distributor ID: Ubuntu //系统分支
+Distributor ID: Ubuntu // <---- 系统发行版本
 Description:    Ubuntu 16.04.5 LTS
-Release:        16.04 //系统版本
+Release:        16.04 // <---- 系统版本
 Codename:       xenial
 ```
 
@@ -111,8 +110,8 @@ Codename:       xenial
 fab@ubuntu:~$ lshw -c video
   *-display                 
        description: VGA compatible controller
-       product: GK107GL [Quadro K2000] //你的显卡型号
-       vendor: NVIDIA Corporation //显卡品牌
+       product: GK107GL [Quadro K2000] // <---- 你的显卡型号
+       vendor: NVIDIA Corporation // <---- 显卡品牌
        physical id: 0
        bus info: pci@0000:05:00.0
        version: a1
@@ -131,22 +130,22 @@ fab@ubuntu:~$ lshw -c video
 
 ![download instruction](https://mmbiz.qpic.cn/mmbiz_png/fz0bOjnnvcahaUSZJKCqjzmvDY4oznq9ACDJF0uHacFVAKa69emicW4qAlzuhDFPXFgQic3qWjpPxOChTI1YxNdQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
-2. 解压缩到挖矿程序到`$HOME/fab-coin`
+2. 解压缩到挖矿程序到`$HOME/fabcoin`
+![decompress]()
 
 3. 输入以下命令启动发币全节点钱包
 
 ```zsh
-fab@ubuntu:~$ cd ~/fabcoin/bin
-fab@ubuntu:~$ ./fabcoin-qt
+fab@ubuntu:~$ ~/fabcoin/fabcoin-qt
 ```
 
 4. 备份钱包并且加密：自动同步->最大化钱包界面->鼠标移动到左上角标题栏出现->设置->加密钱包（打开钱包的密码）->文件->备份钱包（请备份至U盘并妥善保管）
+![encrypt your wallet]()
 
 5. 输入以下命令以启动GPU挖矿
 
 ```zsh
-fab@ubuntu:~$ cd ~/fabcoin/bin
-fab@ubuntu:~$ ./fabcoind -daemon -gen -G -allgpu
+fab@ubuntu:~$ ~/fabcoin/fabcoind -daemon -gen -G -allgpu
 ```
 
 ### 检查挖矿状态
@@ -162,6 +161,20 @@ fab@ubuntu:~$ nvidia-smi
 ```zsh
 fab@ubuntu:~$ cd ~/fabcoin/bin
 fab@ubuntu:~$ ./fabcoin-cli getwalletinfo
+{
+  "walletname": "wallet.dat",
+  "walletversion": 139900,
+  "balance": 0.00000000,
+  "unconfirmed_balance": 0.00000000,
+  "immature_balance": 0.00000000, <---- 刚被挖出但是还没有成熟的发币
+  "txcount": 0,
+  "keypoololdest": 1540846605,
+  "keypoolsize": 999,
+  "keypoolsize_hd_internal": 1000,
+  "unlocked_until": 0,
+  "paytxfee": 0.00000000,
+  "hdmasterkeyid": "e195e58431845fe0cd76f29f33e7bb71277e76e4"
+}
 ```
 
 ### 结束挖矿
