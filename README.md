@@ -141,10 +141,17 @@ fab@ubuntu:~$ ~/fabcoin/fabcoin-qt
 
 ![encrypt your wallet](https://github.com/azraeljack/document/blob/master/encrypt_your_wallet.png)
 
-5. 关闭钱包程序，并输入以下命令以启动GPU挖矿
+5. 关闭钱包程序，并输入以下命令以启动GPU挖矿。注意，如果使用OpenCL挖矿，必须保证每块显卡至少拥有4GB显存，使用CUDA挖矿每块显卡至少拥有2GB显存。
+CUDA挖矿命令：
 
 ```zsh
 fab@ubuntu:~$ ~/fabcoin/fabcoind -daemon -G -allgpu -CUDA -gen -genproclimit=100 -blockmaxconflict=12
+```
+
+OpenCL挖矿命令：
+
+```zsh
+fab@ubuntu:~$ ~/fabcoin/fabcoind -daemon -G -allgpu -gen -genproclimit=100 -blockmaxconflict=12
 ```
 
 ### 检查挖矿状态
