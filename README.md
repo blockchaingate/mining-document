@@ -2,7 +2,7 @@
 
 ## 显卡的选择
 
-现在发布的挖矿程序暂时只有Ubuntu的版本支持`GPU`挖矿（Windows和Mac OSX暂时只支持`CPU`挖矿），因为CPU和GPU挖矿效率相差巨大，所以请尽量选择Ubuntu作为矿机的操作系统。发链挖矿使用的是Equihash算法，所以N卡的挖矿效率要优于A卡，建议选择N卡来进行挖矿，以下教程主要讲述如何在Ubuntu下用N卡挖矿。
+现在发布的挖矿程序暂时只有Ubuntu的版本支持`GPU`挖矿（Windows和Mac OSX暂时只支持`CPU`挖矿），因为CPU和GPU挖矿效率相差巨大，所以请尽量选择Ubuntu作为矿机的操作系统。发链挖矿使用的是`Equihash`算法，所以N卡的挖矿效率要优于A卡，建议选择N卡来进行挖矿，以下教程主要讲述如何在`Ubuntu下用N卡挖矿`。
 
 ## 文章中提到的一些基础操作
 
@@ -24,7 +24,7 @@
 
 1. 首先请先安装`Ubuntu 16.04`作为矿机的操作系统，具体教程请参见这里[这里](http://forum.ubuntu.org.cn/viewtopic.php?t=478527)。
 
-2. 然后我们需要安装Nvidia的显卡驱动，显卡驱动安装完成后请重启你的电脑，
+2. 然后我们需要安装Nvidia的显卡驱动，显卡驱动安装完成后请重启你的电脑，
 
 ```zsh
 fab@ubuntu:~$ sudo apt purge nvidia*
@@ -59,7 +59,7 @@ Mon Oct 29 12:37:27 2018
 +-----------------------------------------------------------------------------+
 ```
 
-4.（请执行此步骤如果你的显卡支持CUDA）
+4.（请执行此步骤如果你的显卡支持CUDA）
 在命令行里输入以下命令来安装`CUDA`
 
 ```zsh
@@ -92,9 +92,9 @@ fab@ubuntu:~$ groups
 fab@ubuntu:~$ sudo usermod -a -G video $LOGNAME
 ```
 
-### 检测挖矿环境
+### 检测挖矿环境
 
-1. 首先先检测操作系统环境。打开`终端`，输入以下命令来检测Ubuntu系统版本, 确认`Distributor ID`为`Ubuntu`，`Release`为`16.04`. 如果结果和以下运行结果不一致请按照[这里](http://forum.ubuntu.org.cn/viewtopic.php?t=478527)的教程重新安装`Ubuntu 16.04`.
+1. 首先先检测操作系统环境。打开`终端`，输入以下命令来检测Ubuntu系统版本, 确认`Distributor ID`为`Ubuntu`，`Release`为`16.04`. 如果结果和以下运行结果不一致请按照[这里](http://forum.ubuntu.org.cn/viewtopic.php?t=478527)的教程重新安装`Ubuntu 16.04`.
 
 ```zsh
 fab@ubuntu:~$ lsb_release -a
@@ -105,7 +105,7 @@ Release:        16.04 //系统版本
 Codename:       xenial
 ```
 
-2. 然后检测显卡型号。在`终端`中输入以下命令来显示显卡信息，确认`vendor`为`NVIDIA Corporation`，如果结果不符合，请先确认显卡驱动已经被正确安装。关于如何在Ubuntu下安装显卡驱动，请参照上面配置挖矿环境第2步的教程。
+2. 然后检测显卡型号。在`终端`中输入以下命令来显示显卡信息，确认`vendor`为`NVIDIA Corporation`，如果结果不符合，请先确认显卡驱动已经被正确安装。关于如何在Ubuntu下安装显卡驱动，请参照上面配置挖矿环境第2步的教程。
 
 ```zsh 
 fab@ubuntu:~$ lshw -c video
@@ -123,15 +123,15 @@ fab@ubuntu:~$ lshw -c video
        resources: irq:53 memory:ee000000-eeffffff memory:d0000000-dfffffff memory:e0000000-e1ffffff ioport:b000(size=128) memory:c0000-dffff
 ```
 
-3. 检测您的显卡是否支持`CUDA`。在[这里](https://developer.nvidia.com/cuda-gpus)搜索你的显卡型号来确定是否你的显卡是否支持`CUDA`。进入网页后选择`CUDA-Enabled Geforce Products`，点击后会有一个列表来显示现在所有支持CUDA的Nvidia Geforce显卡，如果你的显卡在列表里，那么证明你的显卡支持CUDA。如果你使用的是Quadro或者是Tesla系列的显卡那么请点击对应的选项。如果你不知道你自己的显卡型号，可以去上一条的结果里的`product`项中获得，例如我的显卡就是`Quadro K2000`。
+3. 检测您的显卡是否支持`CUDA`。在[这里](https://developer.nvidia.com/cuda-gpus)搜索你的显卡型号来确定是否你的显卡是否支持`CUDA`。进入网页后选择`CUDA-Enabled Geforce Products`，点击后会有一个列表来显示现在所有支持CUDA的Nvidia Geforce显卡，如果你的显卡在列表里，那么证明你的显卡支持CUDA。如果你使用的是Quadro或者是Tesla系列的显卡那么请点击对应的选项。如果你不知道你自己的显卡型号，可以去上一条的结果里的`product`项中获得，例如我的显卡就是`Quadro K2000`。
 
 ### 下载和配置挖矿程序
 
-1. 登陆[fabcoin.pro](http://fabcoin.pro/runtime.html)来下载最新的挖矿程序。请根据你的显卡是否支持CUDA来确定应该下载哪个版本。如果支持CUDA的话可以下载支持CUDA版本的挖矿程序，如果不支持的话可以下载OpenCL版本的挖矿程序。
+1. 登陆[fabcoin.pro](http://fabcoin.pro/runtime.html)来下载最新的挖矿程序。请根据你的显卡是否支持CUDA来确定应该下载哪个版本。如果支持CUDA的话可以下载支持CUDA版本的挖矿程序，如果不支持的话可以下载OpenCL版本的挖矿程序。
 
 ![download instruction](https://mmbiz.qpic.cn/mmbiz_png/fz0bOjnnvcahaUSZJKCqjzmvDY4oznq9ACDJF0uHacFVAKa69emicW4qAlzuhDFPXFgQic3qWjpPxOChTI1YxNdQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
-2. 解压缩到挖矿程序到`$HOME/fab-coin`
+2. 解压缩到挖矿程序到`$HOME/fab-coin`
 
 3. 输入以下命令启动发币全节点钱包
 
