@@ -134,7 +134,7 @@ fab@ubuntu:~$ lshw -c video
 3. 修改文件权限
 
 ```zsh
-fab@ubuntu:~$ cd ~/fabcoin/fabcoin-qt
+fab@ubuntu:~$ cd ~/fabcoin
 fab@ubuntu:~$ chmod +x ./*
 
 ```
