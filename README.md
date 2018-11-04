@@ -131,17 +131,25 @@ fab@ubuntu:~$ lshw -c video
 2. 解压缩到挖矿程序到`$HOME/fabcoin`
 ![decompress](https://github.com/azraeljack/document/blob/master/decompress.png)
 
-3. 输入以下命令启动发币全节点钱包
+3. 修改文件权限
+
+```zsh
+fab@ubuntu:~$ cd ~/fabcoin/fabcoin-qt
+fab@ubuntu:~$ chmod +x ./*
+
+```
+
+4. 输入以下命令启动发币全节点钱包
 
 ```zsh
 fab@ubuntu:~$ ~/fabcoin/fabcoin-qt
 ```
 
-4. 备份钱包并且加密：自动同步->最大化钱包界面->鼠标移动到左上角标题栏出现->设置->加密钱包（打开钱包的密码）->文件->备份钱包（请备份至U盘并妥善保管）
+5. 备份钱包并且加密：自动同步->最大化钱包界面->鼠标移动到左上角标题栏出现->设置->加密钱包（打开钱包的密码）->文件->备份钱包（请备份至U盘并妥善保管）
 
 ![encrypt your wallet](https://github.com/azraeljack/document/blob/master/encrypt_your_wallet.png)
 
-5. 关闭钱包程序，并输入以下命令以启动GPU挖矿。注意，如果使用OpenCL挖矿，必须保证每块显卡至少拥有4GB显存，使用CUDA挖矿每块显卡至少拥有2GB显存。
+6. 关闭钱包程序，并输入以下命令以启动GPU挖矿。注意，如果使用OpenCL挖矿，必须保证每块显卡至少拥有4GB显存，使用CUDA挖矿每块显卡至少拥有2GB显存。
 
 CUDA挖矿命令：
 
